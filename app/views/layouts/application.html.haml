@@ -23,6 +23,10 @@
         %li{:class => ("active" if controller.controller_name == "contacts")}
           %a{:href => contacts_index_path}
             Contact Me
+        -if current_user.try(:admin?)
+          %li
+            %a{:href => "#"}
+              Admin
 
       %h3.muted
         Blogyr
