@@ -13,11 +13,11 @@
           %a{:href => posts_index_path}
             Home
         - if user_signed_in?
-          %li{:class => ("active" if controller.controller_name == "session")}
+          %li{:class => ("active" if ["sessions", "passwords", "registrations"].include? controller.controller_name)}
             %a{:href => destroy_user_session_path}
               Sign out
         - else
-          %li{:class => ("active" if controller.controller_name == "session")}
+          %li{:class => ("active" if ["sessions", "passwords", "registrations"].include? controller.controller_name)}
             %a{:href => user_session_path}
               Sign in
         %li{:class => ("active" if controller.controller_name == "contacts")}
@@ -26,9 +26,5 @@
 
       %h3.muted
         Blogyr
-    %div#contentWrapper.row-fluid
-      %div#content.span10
-        = yield
-      - if content_for?(:sidebar)
-        %div#sidebar.span2
-          = yield(:sidebar)
+    %div
+      = yield

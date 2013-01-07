@@ -1,4 +1,10 @@
 Blogyr::Application.routes.draw do
+  get "session/login"
+
+  get "contacts/index"
+
+  get "contacts/send"
+
   get "posts/index"
 
   get "posts/show"
