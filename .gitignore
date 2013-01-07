@@ -19,3 +19,6 @@
 
 # Ignore RubyMine settings
 /.idea
+
+# Ignore Gemfile.lock, because i'm deploying from Windows to Linux
+/Gemfile.lock
