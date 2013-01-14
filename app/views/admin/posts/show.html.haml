@@ -1,0 +1,26 @@
+- content_for :admin_header do
+  %div#links.pull-right{:style => "margin: 10px auto;"}
+    %a.btn{:href => edit_admin_post_path(@post)}
+      Edit
+    %a.btn{:href => admin_posts_path}
+      Back
+
+
+%p#notice
+  = notice
+%p
+  %b
+    Title
+  = @post.title
+
+%p
+  %b
+    Friendly URL
+  = @post.friendly_url
+
+%p
+  %b
+    Body
+  %hr
+  = @post.body
+  %hr

@@ -1,5 +1,11 @@
-%h1 Posts#index
-%p Find me in app/views/posts/index.html.haml
+- @posts.each do |post|
+  %div.post
+    %h1
+      %a{:href => posts_path(post)}
+        = post.title
+    %p.muted
+      = post.created_at.to_s
+    = post.body
 
 - content_for(:sidebar) do
-  Blablabla
+  %div

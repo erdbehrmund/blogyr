@@ -1,13 +1,17 @@
 Blogyr::Application.routes.draw do
+  match '/admin', :to => 'admin/posts#index', :as => 'admin'
+
+  namespace :admin do
+    resources :posts
+  end
+
+
   get "session/login"
-
   get "contacts/index"
-
   get "contacts/send"
 
-  get "posts/index"
-
-  get "posts/show"
+  match "/p", :to => "posts#index"
+  match "/p/:id", :to => "posts#show", :as => "posts"
 
   devise_for :users
 

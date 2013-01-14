@@ -1,0 +1,28 @@
+- content_for :admin_header do
+  %h2.pull-left
+    Posts
+  %div#links.pull-right{:style => "margin: 10px auto;"}
+    %a.btn{:href => new_admin_post_path}
+      New
+
+%table.table.table-stripped
+  %thead
+    %tr
+      %th{:style => "width: 40%;"}
+        Title
+      %th{:style => "width: 40%;"}
+        User-friendly URL
+      %th{:style => "width: 20%;"}
+        Actions
+  %tbody
+  - @posts.each do |post|
+    %tr
+      %td
+        = post.title
+      %td
+        = post.friendly_url
+      %td
+        %a.btn{:href => edit_admin_post_path(post)}
+          %i.icon-edit
+        %a.btn{:href => "#"}
+          %i.icon-remove

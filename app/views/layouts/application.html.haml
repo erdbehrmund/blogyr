@@ -1,38 +1,37 @@
 !!!
 %html
-%head
-%title Blogyr
-= stylesheet_link_tag    "application", :media => "all"
-= javascript_include_tag "application"
-= csrf_meta_tags
-%body
-  %div.container
-    %div#header
-      %ul.nav.nav-pills.pull-right
-        %li{:class => ("active" if controller.controller_name == "posts")}
-          %a{:href => posts_index_path}
-            Home
-        - if user_signed_in?
-          %li{:class => ("active" if controller.controller_name == "session")}
-            %a{:href => destroy_user_session_path}
-              Sign out
-        - else
-          %li{:class => ("active" if controller.controller_name == "session")}
-            %a{:href => user_session_path}
-              Sign in
-        %li{:class => ("active" if controller.controller_name == "contacts")}
-          %a{:href => contacts_index_path}
-            Contact Me
-        -if current_user.try(:admin?)
-          %li
-            %a{:href => "#"}
-              Admin
-
-      %h3.muted
-        Blogyr
-    %div#contentWrapper.row-fluid
-      %div#content.span10
-        = yield
-      - if content_for?(:sidebar)
-        %div#sidebar.span2
-          = yield(:sidebar)
+  %head
+    %title Blogyr
+    = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  %body
+    %div.container
+      %div#header
+        %ul.nav.nav-pills.pull-right
+          %li{:class => ("active" if controller.controller_name == "posts")}
+            %a{:href => posts_index_path}
+              Home
+          %li{:class => ("active" if controller.controller_name == "contacts")}
+            %a{:href => contacts_index_path}
+              Contact Me
+          -if current_user.try(:admin?)
+            %li
+              %a{:href => admin_path  }
+                Admin
+          - if user_signed_in?
+            %li{:class => ("active" if controller.controller_name == "session")}
+              %a{:href => destroy_user_session_path}
+                Sign out
+          - else
+            %li{:class => ("active" if controller.controller_name == "session")}
+              %a{:href => user_session_path}
+                Sign in
+        %h3.muted
+          Blogyr
+      %div#contentWrapper.row-fluid
+        %div#content.span10
+          = yield
+        - if content_for?(:sidebar)
+          %div#sidebar.span2
+            = yield(:sidebar)
