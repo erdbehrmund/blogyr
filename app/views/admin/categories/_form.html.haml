@@ -1,0 +1,12 @@
+= form_for [:admin, @category], :html => { :class => "form-horizontal" } do |f|
+  %div#errors
+    - @category.errors.full_messages.each do |msg|
+      %h3
+        = msg
+  = field_set_tag "Category" do
+    %div.control-group
+      = f.label :name, :class => "control-label" #'topic', nil, :class => "control-label"
+      %div.controls
+        = f.text_field :name
+    %div.control-group
+      = submit_tag "Save"

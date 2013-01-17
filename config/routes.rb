@@ -1,8 +1,17 @@
 Blogyr::Application.routes.draw do
+  get "categories/index"
+
+  get "categories/show"
+
+  get "categories/new"
+
+  get "categories/edit"
+
   match '/admin', :to => 'admin/posts#index', :as => 'admin'
 
   namespace :admin do
     resources :posts
+    resources :categories
   end
 
 

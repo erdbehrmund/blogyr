@@ -1,0 +1,28 @@
+- content_for :admin_header do
+  %h2.pull-left
+    Categories
+  %div#links.pull-right{:style => "margin: 10px auto;"}
+    %a.btn{:href => new_admin_category_path}
+      New
+
+%table.table.table-stripped
+  %thead
+    %tr
+      %th{:style => "width: 40%;"}
+        Title
+      %th{:style => "width: 40%;"}
+        Usage
+      %th{:style => "width: 20%;"}
+        Actions
+  %tbody
+  - @categories.each do |category|
+    %tr
+      %td
+        = category.name
+      %td
+        = category.posts.count
+      %td
+        %a.btn{:href => edit_admin_category_path(category)}
+          %i.icon-edit
+        %a.btn{:href => "#"}
+          %i.icon-remove
