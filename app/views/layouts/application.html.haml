@@ -10,7 +10,7 @@
       %div#header
         %ul.nav.nav-pills.pull-right
           %li{:class => ("active" if controller.controller_name == "posts")}
-            %a{:href => posts_index_path}
+            %a{:href => root_path}
               Home
           %li{:class => ("active" if controller.controller_name == "contacts")}
             %a{:href => contacts_index_path}
