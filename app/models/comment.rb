@@ -3,5 +3,7 @@ class Comment < ActiveRecord::Base
   belongs_to :author, :class_name => "User"
   belongs_to :post
 
-  attr_accessible :body
+  attr_accessible :body, :post_id
+
+  validates_presence_of :body
 end

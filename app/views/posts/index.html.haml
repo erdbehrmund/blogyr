@@ -4,7 +4,8 @@
       %a{:href => posts_path(post)}
         = post.title
     %p.muted
-      = post.created_at.to_s
+      %small
+        = l post.created_at
     - c = post.body.match /(.*)<!--more-->(.*)/m
     - if c.nil?
       = raw post.body

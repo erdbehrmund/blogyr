@@ -1,4 +1,4 @@
-%h1
+%h2
   = @post.title
 - c = @post.body.match /(.*)<!--more-->(.*)/m
 - if c.nil?
@@ -6,3 +6,32 @@
 - else
   = raw c[1]
   = raw c[2]
+%hr
+%div#comments
+  - if @post.comments.none?
+    %p{:style => "text-align: center;"}
+      %strong
+        There isn't any comments any
+  - else
+    - @post.comments.each do |comment|
+      %div.comment-container
+        %p
+          %span.text-info
+            %strong
+              = comment.author.name
+          %span.muted
+            %small
+              = l comment.created_at
+        %div.comment{:style => "border-bottom: 1px solid #eeeeee; padding-bottom: 10px;"}
+          = comment.body
+%div.comment-editor-container
+  %div.comment-tab.comment-hidden
+    You need to sign in to comment
+  %div.comment-tab
+    = form_for @comment, :url => post_comment_path do |f|
+      %legend
+        Post comment
+      = f.cktext_area :body
+      = f.hidden_field :post_id
+      %br
+      = f.submit :value => "Post your comment", :class => "btn"

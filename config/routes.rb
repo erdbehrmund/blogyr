@@ -11,8 +11,10 @@ Blogyr::Application.routes.draw do
   get "contacts/index"
   get "contacts/send"
 
+  match "/p/c", :to => "posts#comment", :as => "post_comment"
   match "/p", :to => "posts#index"
-  match "/p/:id", :to => "posts#show", :as => "posts"
+  match "/p/:id", :to => "posts#show", :as => "post"
+
 
   match "/c/:id", :to => "posts#by_cat", :as => "category"
 
