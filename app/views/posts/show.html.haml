@@ -1,6 +1,6 @@
 %h1
   = @post.title
-- c = @post.body.match /(.*)<!more>(.*)/m
+- c = @post.body.match /(.*)<!--more-->(.*)/m
 - if c.nil?
   = raw @post.body
 - else

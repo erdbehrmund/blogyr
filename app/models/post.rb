@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-  attr_accessible :body, :friendly_url, :show, :title
+  attr_accessible :body, :friendly_url, :show, :title, :categories, :category_ids
 
   validates_presence_of :body, :title
 

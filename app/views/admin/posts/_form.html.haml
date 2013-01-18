@@ -17,6 +17,14 @@
       %div.controls
         = f.cktext_area :body
     %div.control-group
+      = f.label :categories, :class => "control-label"
+      %div.controls
+        = f.hidden_field :category_ids, :name => "post[category_ids][]"
+        %ul#categories
+          - @categories.each do |category|
+            %li.variant{"data-cat" => category.id}
+              = category.name
+    %div.control-group
       %div.controls
         %label.checkbox
           = f.check_box :show

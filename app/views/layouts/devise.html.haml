@@ -10,7 +10,7 @@
     %div#header
       %ul.nav.nav-pills.pull-right
         %li{:class => ("active" if controller.controller_name == "posts")}
-          %a{:href => posts_index_path}
+          %a{:href => root_path}
             Home
         - if user_signed_in?
           %li{:class => ("active" if ["sessions", "passwords", "registrations"].include? controller.controller_name)}

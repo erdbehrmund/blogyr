@@ -11,3 +11,21 @@
  *= require_self
  *= require_tree .
  */
+
+#categories {
+    margin: 0px;
+}
+
+.variant {
+    display: inline-block;
+    font-size: 12px;
+    margin: 3px;
+    padding: 1px 3px;
+    color: #5c7f95;
+    background: #f0f0f0;
+}
+
+.variant-selected {
+    background: #b3d5eb;
+    font-size: 13px;
+}

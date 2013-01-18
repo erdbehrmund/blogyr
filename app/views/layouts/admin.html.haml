@@ -1,27 +1,28 @@
 !!!
 %html
-%head
-%title Blogyr - Admin
-= stylesheet_link_tag    "application", :media => "all"
-= javascript_include_tag "application"
-= csrf_meta_tags
-%body
-  %div.container
-    %div#header
-      %ul.nav.nav-pills.pull-right
-        %li
-          %a{:href => root_path}
-            Home
-        %li
-          %a{:href => admin_posts_path}
-            Posts
-        %li
-          %a{:href => admin_categories_path}
-            Categories
-      %h3.muted
-        Blogyr - Admin
-    %div#subHeaderWrapper.row-fluid
-      %div#admin_header.span12
-        = yield :admin_header
-    %div#contentWrapper.row-fluid
-      = yield
+  %head
+    %title Blogyr - Admin
+    = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "application"
+    = javascript_include_tag "admin"
+    = csrf_meta_tags
+  %body
+    %div.container
+      %div#header
+        %ul.nav.nav-pills.pull-right
+          %li
+            %a{:href => root_path}
+              Home
+          %li
+            %a{:href => admin_posts_path}
+              Posts
+          %li
+            %a{:href => admin_categories_path}
+              Categories
+        %h3.muted
+          Blogyr - Admin
+      %div#subHeaderWrapper.row-fluid
+        %div#admin_header.span12
+          = yield :admin_header
+      %div#contentWrapper.row-fluid
+        = yield

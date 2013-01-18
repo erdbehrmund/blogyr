@@ -5,7 +5,7 @@
         = post.title
     %p.muted
       = post.created_at.to_s
-    - c = post.body.match /(.*)<!more>(.*)/m
+    - c = post.body.match /(.*)<!--more-->(.*)/m
     - if c.nil?
       = raw post.body
     - else

@@ -9,10 +9,12 @@ class Admin::PostsController < AdminController
 
   def edit
     @post = Post.find_by_id params[:id]
+    @categories = Category.all
   end
 
   def new
     @post = Post.new
+    @categories = Category.all
   end
 
   def create
