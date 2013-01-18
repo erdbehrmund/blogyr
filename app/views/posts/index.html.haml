@@ -1,6 +1,6 @@
 - @posts.each do |post|
   %div.post{:style => "margin-bottom: 20px;"}
-    %h1
+    %h2
       %a{:href => posts_path(post)}
         = post.title
     %p.muted
@@ -15,3 +15,11 @@
 
 - content_for(:sidebar) do
   %div
+    %h4.muted
+      Categories
+    %hr{:style => "margin: 5px 0px;"}
+    %ul.categories
+      - @categories.each do |cat|
+        %li
+          %a{:href => category_path(cat)}
+            = cat.name

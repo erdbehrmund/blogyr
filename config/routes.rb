@@ -1,12 +1,4 @@
 Blogyr::Application.routes.draw do
-  get "categories/index"
-
-  get "categories/show"
-
-  get "categories/new"
-
-  get "categories/edit"
-
   match '/admin', :to => 'admin/posts#index', :as => 'admin'
 
   namespace :admin do
@@ -21,6 +13,8 @@ Blogyr::Application.routes.draw do
 
   match "/p", :to => "posts#index"
   match "/p/:id", :to => "posts#show", :as => "posts"
+
+  match "/c/:id", :to => "posts#by_cat", :as => "category"
 
   devise_for :users
 

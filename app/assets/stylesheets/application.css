@@ -12,8 +12,8 @@
  *= require_tree .
  */
 
-#categories {
-    margin: 0px;
+.categories {
+    list-style: none;
 }
 
 .variant {
@@ -28,4 +28,8 @@
 .variant-selected {
     background: #b3d5eb;
     font-size: 13px;
+}
+
+.variant-front {
+    width: 100%;
 }
