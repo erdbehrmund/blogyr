@@ -25,13 +25,14 @@
         %div.comment{:style => "border-bottom: 1px solid #eeeeee; padding-bottom: 10px;"}
           = comment.body
 %div.comment-editor-container
-  %div.comment-tab.comment-hidden
-    You need to sign in to comment
-  %div.comment-tab
-    = form_for @comment, :url => post_comment_path do |f|
-      %legend
-        Post comment
-      = f.cktext_area :body
-      = f.hidden_field :post_id
-      %br
-      = f.submit :value => "Post your comment", :class => "btn"
+  - if not user_signed_in?
+    %div.comment-tab#warning
+      %div{}
+        %p{:style => "text-align: center;"}
+          You need to sign in to comment
+        %div#uLogin{"data-ulogin" => "display=panel;fields=first_name,last_name,email,nickname;providers=google,facebook,twitter,vkontakte,linkedin;hidden=yandex,livejournal,openid,lastfm,liveid,soundcloud,steam,flickr,vimeo,youtube,webmoney;redirect_uri=;callback=uLoginAuth", :style => "margin: 0 auto; width: 252px;"}
+    %div.comment-tab.comment-hidden#editor
+      = render "comment"
+  - else
+    %div.comment-tab
+      = render "comment"

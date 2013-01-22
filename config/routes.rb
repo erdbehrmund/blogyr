@@ -18,7 +18,11 @@ Blogyr::Application.routes.draw do
 
   match "/c/:id", :to => "posts#by_cat", :as => "category"
 
-  devise_for :users
+  devise_for :users, :controllers => { :sessions => "sessions" }
+  devise_scope :user do
+    match "/users/ulogin", :to => "sessions#ulogin"
+  end
+
 
   root :to => "posts#index"
 

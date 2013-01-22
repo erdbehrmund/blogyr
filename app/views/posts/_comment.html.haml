@@ -1,0 +1,7 @@
+= form_for @comment, :url => post_comment_path do |f|
+  %legend
+    Post comment
+  = f.cktext_area :body
+  = f.hidden_field :post_id
+  %br
+  = f.submit :value => "Post your comment", :class => "btn"

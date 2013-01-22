@@ -1,7 +1,7 @@
 - @posts.each do |post|
   %div.post{:style => "margin-bottom: 20px;"}
     %h2
-      %a{:href => posts_path(post)}
+      %a{:href => post_path(post)}
         = post.title
     %p.muted
       %small
@@ -11,7 +11,7 @@
       = raw post.body
     - else
       = raw c[1]
-      %a{:href => posts_path(post)}
+      %a{:href => post_path(post)}
         Read more!
 
 - content_for(:sidebar) do
