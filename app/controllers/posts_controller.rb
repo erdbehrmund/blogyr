@@ -21,8 +21,11 @@ class PostsController < ApplicationController
   end
 
   def comment
-    @comment = Comment.new params[:comment]
+    @comment = Comment.new
+    @comment.body = Sanitize.clean(params[:comment][:body], Sanitize::Config::BASIC)
+    @comment.post = Post.find params[:comment][:post_id]
     @comment.author = current_user
+
     if @comment.save
       redirect_to @comment.post
     else
