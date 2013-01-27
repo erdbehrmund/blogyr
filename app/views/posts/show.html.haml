@@ -23,7 +23,7 @@
             %small
               = l comment.created_at
         %div.comment{:style => "border-bottom: 1px solid #eeeeee; padding-bottom: 10px;"}
-          = comment.body
+          = raw comment.body
 %div.comment-editor-container
   %div#notification
     %h3#notification_message

@@ -9,6 +9,8 @@ en:
   sign_in_to_comment: "Please, sign in to comment"
   post_comment: "Post comment"
   comment_as: "Comment as"
+  name_succ: "Name changed successfully"
+  name_err: "This name isn't available"
   date:
     formats:
       default: "%Y-%m-%d"

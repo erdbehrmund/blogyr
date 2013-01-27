@@ -6,6 +6,8 @@ ru:
   sign_in_to_comment: "Пожалуйста, представьтесь для того что-бы оставить комментарий"
   post_comment: "Оставить комментарий"
   comment_as: "Ваше имя"
+  name_succ: "Имя успешно изменено"
+  name_err: "Это имя уже занято"
   date:
     formats:
       default: "%Y-%m-%d"
