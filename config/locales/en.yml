@@ -2,6 +2,13 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  home: "Home"
+  contact_me: "Contact Me"
+  categories: "Categories"
+  read_more: "Read more!"
+  sign_in_to_comment: "Please, sign in to comment"
+  post_comment: "Post comment"
+  comment_as: "Comment as"
   date:
     formats:
       default: "%Y-%m-%d"

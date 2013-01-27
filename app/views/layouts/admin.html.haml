@@ -12,13 +12,13 @@
         %ul.nav.nav-pills.pull-right
           %li
             %a{:href => root_path}
-              Home
+              = t(:home)
           %li
             %a{:href => admin_posts_path}
-              Posts
+              = t(:posts)
           %li
             %a{:href => admin_categories_path}
-              Categories
+              = t(:categories)
         %h3.muted
           Blogyr - Admin
       %div#subHeaderWrapper.row-fluid

@@ -17,10 +17,20 @@ class SessionsController < Devise::SessionsController
       user.save!
       sign_in user, :bypass => true
     else
-
       sign_in user, :bypass => true
     end
 
-    render json: {:status => "Ok" }
+    render json: {:status => "Ok", :userName => user.name }
+  end
+
+  def updateName
+    user = current_user
+    user.name = params[:name]
+    if user.save
+      render json: {:status => "Ok"}
+    else
+      user.reload
+      render json: {:status => "Error", :userName => user.name}
+    end
   end
 end

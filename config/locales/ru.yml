@@ -1,0 +1,14 @@
+ru:
+  home: "Главная"
+  contact_me: "Связаться со мной"
+  categories: "Категории"
+  read_more: "Читать дальше!"
+  sign_in_to_comment: "Пожалуйста, представьтесь для того что-бы оставить комментарий"
+  post_comment: "Оставить комментарий"
+  comment_as: "Ваше имя"
+  date:
+    formats:
+      default: "%Y-%m-%d"
+  time:
+    formats:
+      default: "%Y-%m-%d %H:%M"

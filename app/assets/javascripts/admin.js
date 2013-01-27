@@ -16,7 +16,7 @@ $(document).ready(function() {
 
     $(".variant").each(function() {
         if($.inArray($(this).attr('data-cat'), ar) > -1) {
-            $(this).toggleClass('variant-selected');
+            buildTag(this);
         }
 
         $(this).click(function() {

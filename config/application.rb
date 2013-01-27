@@ -66,5 +66,11 @@ module Blogyr
     config.assets.version = '1.0'
 
     config.time_zone = "Kyiv"
+
+    # Sets blog locale
+    I18n.default_locale = "ru"
+
+    # Blog caption
+
   end
 end

@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  helper_method :current_user
+
   def index
     @posts = Post.all
     @categories = Category.all

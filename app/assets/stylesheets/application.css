@@ -42,6 +42,7 @@
 .comment-editor-container {
     overflow: hidden;
     height: 420px;
+    position: relative;
 }
 
 .comment-tab {
@@ -51,4 +52,27 @@
 
 .comment-hidden {
     display: none;
+}
+
+.user-settings {
+    float: right;
+    margin-top: -50px;
+}
+
+.user-settings > .input-append {
+    margin-bottom: 0px;
+}
+
+.user-settings > label {
+    margin: 5px;
+}
+
+#notification {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    background-color:#eeeeee;
+    text-align: center;
+    display: none;
+    z-index: 3;
 }

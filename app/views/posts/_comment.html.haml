@@ -1,7 +1,16 @@
 = form_for @comment, :url => post_comment_path do |f|
   %legend
-    Post comment
+    = t(:post_comment)
   = f.cktext_area :body
   = f.hidden_field :post_id
   %br
-  = f.submit :value => "Post your comment", :class => "btn"
+  %div{:style => "margin-right: 400px;"}
+    = f.submit :value => t(:post_comment), :class => "btn"
+%div.user-settings
+  %div.input-append
+    %label{:style => "display: inline-block; margin: 5px;"}
+      = t(:comment_as)
+    %input.input-medium#userName{:type => "text", :disabled => '', :value => (current_user.name if current_user)}
+    %button.btn#changeName{:type => "button"}
+      %i.icon-cog#changeNameIcon
+

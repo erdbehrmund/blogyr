@@ -21,6 +21,7 @@ Blogyr::Application.routes.draw do
   devise_for :users, :controllers => { :sessions => "sessions" }
   devise_scope :user do
     match "/users/ulogin", :to => "sessions#ulogin"
+    match "/users/setName", :to => "sessions#updateName"
   end
 
 

@@ -12,22 +12,18 @@
         %ul.nav.nav-pills.pull-right
           %li{:class => ("active" if controller.controller_name == "posts")}
             %a{:href => root_path}
-              Home
+              = t(:home)
           %li{:class => ("active" if controller.controller_name == "contacts")}
             %a{:href => contacts_index_path}
-              Contact Me
+              = t(:contact_me)
           -if current_user.try(:admin?)
             %li
               %a{:href => admin_path  }
-                Admin
+                = t(:admin)
           - if user_signed_in?
             %li{:class => ("active" if controller.controller_name == "session")}
               %a{:href => destroy_user_session_path}
-                Sign out
-          - else
-            %li{:class => ("active" if controller.controller_name == "session")}
-              %a{:href => user_session_path}
-                Sign in
+                = t(:sign_out)
         %h2.muted
           Blogyr
       %div#contentWrapper.row-fluid

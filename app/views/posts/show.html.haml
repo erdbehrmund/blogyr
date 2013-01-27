@@ -25,14 +25,18 @@
         %div.comment{:style => "border-bottom: 1px solid #eeeeee; padding-bottom: 10px;"}
           = comment.body
 %div.comment-editor-container
+  %div#notification
+    %h3#notification_message
+      This name is not available
   - if not user_signed_in?
     %div.comment-tab#warning
       %div{}
         %p{:style => "text-align: center;"}
-          You need to sign in to comment
+          = t(:sign_in_to_comment)
         %div#uLogin{"data-ulogin" => "display=panel;fields=first_name,last_name,email,nickname;providers=google,facebook,twitter,vkontakte,linkedin;hidden=yandex,livejournal,openid,lastfm,liveid,soundcloud,steam,flickr,vimeo,youtube,webmoney;redirect_uri=;callback=uLoginAuth", :style => "margin: 0 auto; width: 252px;"}
     %div.comment-tab.comment-hidden#editor
       = render "comment"
+    %div.comment-tab.comment-hidden
   - else
     %div.comment-tab
       = render "comment"

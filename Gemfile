@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.10'
+gem 'rails'
 
 gem 'sqlite3', :platforms => :mingw, :group => :development
 

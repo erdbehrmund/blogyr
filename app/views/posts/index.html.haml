@@ -11,13 +11,19 @@
       = raw post.body
     - else
       = raw c[1]
-      %a{:href => post_path(post)}
-        Read more!
+      %p
+        - post.categories.each do |cat|
+          %small.muted
+            = cat.name
+        %span.pull-right
+          %a{:href => post_path(post)}
+            = t(:read_more)
+    %hr
 
 - content_for(:sidebar) do
   %div
     %h4.muted
-      Categories
+      = t(:categories)
     %hr{:style => "margin: 5px 0px;"}
     %ul.categories
       - @categories.each do |cat|

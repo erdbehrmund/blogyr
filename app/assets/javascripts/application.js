@@ -13,13 +13,4 @@
 //= require jquery
 //= require jquery_ujs
 //= require ckeditor/init
-
-function uLoginAuth(utoken) {
-    $.getJSON("/users/ulogin", { token: utoken }, function(json) {
-        if(json.status == "Ok") {
-            $("#warning").fadeOut(400, function() {
-                $("#editor").toggleClass("comment-hidden");
-            });
-        }
-    });
-}
+//= require posts
