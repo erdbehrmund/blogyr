@@ -11,7 +11,7 @@
   - if @post.comments.none?
     %p{:style => "text-align: center;"}
       %strong
-        There isn't any comments any
+        = t(:no_comments)
   - else
     - @post.comments.each do |comment|
       %div.comment-container

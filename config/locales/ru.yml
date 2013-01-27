@@ -8,9 +8,13 @@ ru:
   comment_as: "Ваше имя"
   name_succ: "Имя успешно изменено"
   name_err: "Это имя уже занято"
+  no_comments: "Комментариев пока нет"
   date:
     formats:
       default: "%Y-%m-%d"
   time:
     formats:
       default: "%Y-%m-%d %H:%M"
+  will_paginate:
+    previous_label: "&#8592; Предыдущая"
+    next_label: "Следующая &#8594;"

@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   helper_method :current_user
 
   def index
-    @posts = Post.all
+    @posts = Post.paginate :page => params[:page]
     @categories = Category.all
   end
 

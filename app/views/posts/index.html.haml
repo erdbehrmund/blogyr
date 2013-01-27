@@ -19,6 +19,8 @@
           %a{:href => post_path(post)}
             = t(:read_more)
     %hr
+%div.pagination-centered
+  = will_paginate @posts, :renderer => BootStrapLinkRenderer
 
 - content_for(:sidebar) do
   %div
